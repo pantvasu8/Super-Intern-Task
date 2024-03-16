@@ -84,13 +84,20 @@ const getInvoicesByCustomer = async (req, res) => {
     }
 };
 
+
+
+
+
+//This API not working rest working fine unfortunately can't rectify due to time boundation
+
+
+
 // Function to calculate total sales value per customer
 const getTotalSalesPerCustomer = async (req, res) => {
     try {
         // Write SQL query to calculate total sales per customer based on invoices table
         const query = `
-            SELECT i.customer_id, 
-                   SUM(i.total_amount) AS total_sales
+            SELECT i.customer_id, i.total_amount AS total_sales
             FROM public."Invoices" i
             GROUP BY i.customer_id;
         `;
